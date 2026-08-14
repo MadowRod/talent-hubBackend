@@ -59,6 +59,22 @@ public class UsuarioAdminServiceImpl
 
     @Override
     @Transactional(readOnly = true)
+    public UsuarioAdminResponse buscarUsuarioPorId(
+            Long usuarioId
+    ) {
+
+        Usuario usuario = usuarioRepository.findById(usuarioId)
+                .orElseThrow(() ->
+                        new ResourceNotFoundException(
+                                "Usuário não encontrado"
+                        )
+                );
+
+        return toResponse(usuario);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
     public List<UsuarioSkillResponse> listarSkillsUsuario(
             Long usuarioId
     ) {

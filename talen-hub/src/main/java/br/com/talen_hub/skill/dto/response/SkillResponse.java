@@ -4,6 +4,8 @@ public record SkillResponse(
 
         Long id,
         String nome,
+        String descricao,
+        String imagemUrl,
         Long categoriaId,
         String categoriaNome
 

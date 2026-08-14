@@ -12,6 +12,10 @@ public interface UsuarioAdminService {
             String skill
     );
 
+    UsuarioAdminResponse buscarUsuarioPorId(
+            Long usuarioId
+    );
+
     List<UsuarioSkillResponse> listarSkillsUsuario(
             Long usuarioId
     );

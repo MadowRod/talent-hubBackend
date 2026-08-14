@@ -28,6 +28,12 @@ public class Skill {
     @Column(nullable = false, length = 100)
     private String nome;
 
+    @Column(nullable = false, length = 500)
+    private String descricao;
+
+    @Column(name = "imagem_url", length = 500)
+    private String imagemUrl;
+
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(
             name = "categoria_id",

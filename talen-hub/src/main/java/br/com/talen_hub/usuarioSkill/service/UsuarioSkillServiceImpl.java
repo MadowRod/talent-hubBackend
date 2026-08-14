@@ -148,6 +148,8 @@ public class UsuarioSkillServiceImpl implements UsuarioSkillService {
                 usuarioSkill.getUsuario().getNome(),
                 skill.getId(),
                 skill.getNome(),
+                skill.getDescricao(),
+                skill.getImagemUrl(),
                 skill.getCategoria().getId(),
                 skill.getCategoria().getNome(),
                 usuarioSkill.getLevel()

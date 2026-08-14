@@ -51,6 +51,8 @@ public class SkillServiceImpl implements SkillService {
 
         Skill skill = Skill.builder()
                 .nome(request.nome())
+                .descricao(request.descricao())
+                .imagemUrl(request.imagemUrl())
                 .categoria(categoria)
                 .build();
 
@@ -115,6 +117,8 @@ public class SkillServiceImpl implements SkillService {
         }
 
         skill.setNome(request.nome());
+        skill.setDescricao(request.descricao());
+        skill.setImagemUrl(request.imagemUrl());
         skill.setCategoria(categoria);
 
         Skill atualizada = skillRepository.save(skill);
@@ -140,6 +144,8 @@ public class SkillServiceImpl implements SkillService {
         return new SkillResponse(
                 skill.getId(),
                 skill.getNome(),
+                skill.getDescricao(),
+                skill.getImagemUrl(),
                 skill.getCategoria().getId(),
                 skill.getCategoria().getNome()
         );

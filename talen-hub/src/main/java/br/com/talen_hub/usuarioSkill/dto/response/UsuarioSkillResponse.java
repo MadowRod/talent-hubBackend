@@ -14,11 +14,14 @@ public record UsuarioSkillResponse(
 
         String skillNome,
 
+        String skillDescricao,
+
+        String skillImagemUrl,
+
         Long categoriaId,
 
         String categoriaNome,
 
         Level level
-
 ) {
 }

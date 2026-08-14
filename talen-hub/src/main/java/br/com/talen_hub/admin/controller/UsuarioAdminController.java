@@ -34,6 +34,18 @@ public class UsuarioAdminController {
         );
     }
 
+    @GetMapping("/{usuarioId}")
+    public ResponseEntity<UsuarioAdminResponse> buscarUsuarioPorId(
+            @PathVariable Long usuarioId
+    ) {
+
+        return ResponseEntity.ok(
+                usuarioAdminService.buscarUsuarioPorId(
+                        usuarioId
+                )
+        );
+    }
+
     @GetMapping("/{usuarioId}/skills")
     public ResponseEntity<List<UsuarioSkillResponse>> listarSkillsUsuario(
             @PathVariable Long usuarioId
