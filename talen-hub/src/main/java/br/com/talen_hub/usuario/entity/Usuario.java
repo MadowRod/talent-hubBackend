@@ -14,7 +14,15 @@ import java.time.LocalDateTime;
 public class Usuario {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "usuario_generator"
+    )
+    @SequenceGenerator(
+            name = "usuario_generator",
+            sequenceName = "usuarios_seq",
+            allocationSize = 1
+    )
     private Long id;
 
     @Column (nullable = false, length = 150)

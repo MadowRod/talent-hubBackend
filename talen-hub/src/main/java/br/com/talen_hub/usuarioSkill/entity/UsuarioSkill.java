@@ -27,7 +27,15 @@ import lombok.*;
 public class UsuarioSkill {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "usuario_skill_generator"
+    )
+    @SequenceGenerator(
+            name = "usuario_skill_generator",
+            sequenceName = "usuarios_skills_seq",
+            allocationSize = 1
+    )
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

@@ -22,7 +22,15 @@ import lombok.*;
 public class Skill {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "skill_generator"
+    )
+    @SequenceGenerator(
+            name = "skill_generator",
+            sequenceName = "skills_seq",
+            allocationSize = 1
+    )
     private Long id;
 
     @Column(nullable = false, length = 100)
